@@ -1,0 +1,12 @@
+diff --git a/osfmk/arm/arm_init.c b/osfmk/arm/arm_init.c
+--- a/osfmk/arm/arm_init.c
++++ b/osfmk/arm/arm_init.c
+@@ -518,7 +518,7 @@ arm_init(
+ 		maxmem = 0;
+ 	}
+ 
+-#if __ARM_PAN_AVAILABLE__
++#if __ARM_PAN_AVAILABLE__ && !defined(SWEET)
+ 	__builtin_arm_wsr("pan", 1);
+ #endif  /* __ARM_PAN_AVAILABLE__ */
+ 
